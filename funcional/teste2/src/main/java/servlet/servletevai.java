@@ -77,7 +77,7 @@ public class servletevai extends HttpServlet {
         
         Usuario usuario = new Usuario();
         usuario.setName(request.getParameter("name"));
-             Session sessionRecheio;
+        Session sessionRecheio;
         sessionRecheio = HibernateUtil.getSession();
         Transaction tr = sessionRecheio.beginTransaction();
         sessionRecheio.saveOrUpdate(usuario);
