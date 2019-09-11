@@ -4,6 +4,7 @@
     Author     : aluno
 --%>
 
+<%@page import="com.milu.teste2.Usuario"%>
 <%@page import="org.hibernate.Transaction"%>
 <%@page import="util.HibernateUtil"%>
 <%@page import="org.hibernate.Session"%>
@@ -17,18 +18,21 @@
         <title>JSP Page</title>
     </head>
     <body>
-    <% 
-    
+        <h1>Usuario único</h1>
         
-Session sessionRecheio;
+    <% 
+        String nome ="kkk";
+        Usuario usuario = new Usuario();
+        Session sessionRecheio;
         sessionRecheio = HibernateUtil.getSession();
         Transaction tr = sessionRecheio.beginTransaction();
-        sessionRecheio.createquery(From usuario where nome=).setString;
+        usuario = (Usuario) sessionRecheio.createQuery("From Usuario where nome='kkk'").setString(0,nome).uniqueResult();
+        sessionRecheio.close();
         tr.commit();
 
     %>
         
         
-        <h1>Hello World!</h1>
+    
     </body>
 </html>
